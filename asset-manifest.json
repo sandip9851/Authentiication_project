@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Authentiication_project/static/css/main.b5f0e180.css",
+    "main.js": "/Authentiication_project/static/js/main.640a06dc.js",
+    "index.html": "/Authentiication_project/index.html",
+    "main.b5f0e180.css.map": "/Authentiication_project/static/css/main.b5f0e180.css.map",
+    "main.640a06dc.js.map": "/Authentiication_project/static/js/main.640a06dc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b5f0e180.css",
+    "static/js/main.640a06dc.js"
+  ]
+}
