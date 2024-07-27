@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Profile = () => {
+const Profile = ({ onLogout }) => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState('');
 
@@ -15,13 +15,17 @@ const Profile = () => {
           if (response.ok) {
             const userData = await response.json();
             setUser(userData);
+            console.log("response ok for profile page")
           } else {
+            console.log("response not ok for profile page")
             setError('Failed to fetch user data.');
           }
         } catch (error) {
+            
           setError('An unexpected error occurred.');
         }
       } else {
+        console.log("problem in local storage")
         setError('No user data found. Please log in.');
       }
     };
@@ -38,12 +42,24 @@ const Profile = () => {
   }
 
   return (
-    <div>
+    <div className='profile-container'>
       <h2>Profile</h2>
-      <p>Name: {user.firstName} {user.lastName}</p>
-      <p>Email: {user.email}</p>
-      <p>Username: {user.username}</p>
+			<img src={user.image} alt="jhddhd" width="50" />
+
+			<p>ID: {user.id} {user.lastName}</p>
+			<p>Username: {user.username}</p>
+			<p>Email: {user.email}</p>
+			<p>First-Name: {user.firstName}</p>
+      <p>Last-Name:{user.lastName}</p>
+			<p>Gender: {user.gender}</p>
+			
+			
+      
+      
+      <p></p>
       {/* Add more user details here if needed */}
+			
+      <button onClick={onLogout}>Logout</button>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 /* src/App.css */
-.login-container {
+/*.login-container {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -45,4 +45,63 @@ a{
 
 span{
   color: #0056b3;
+}*/
+
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  
+  border-radius: 1rem;
+  background-color: rgb(231, 238, 238);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+}
+
+a{
+  text-decoration: none;
+  color: #007BFF;
+  
+}
+
+span{
+  color: #0056b3;
+}
+
+.profile-container{
+  width: 40vw;
+  height: 60vh;
+  background-color: rgb(231, 238, 238);
+  margin: auto;
+  padding: 20px;
+  border-radius: 1rem;
 }

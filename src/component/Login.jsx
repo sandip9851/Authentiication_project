@@ -1,37 +1,19 @@
-import React, { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useRef } from 'react';
 
-const Login = () => {
-  const userNameRef = useRef();
-  const passwordRef = useRef();
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
-
-  const handleLogin = async (e) => {
+function Login({ onLogin, error }) {
+    const userNameRef = useRef();
+    const passwordRef = useRef();
+//username":"emilys","password":"emilyspass
+//"username":"michaelw","password":"michaelwpass"
+  const handleLogin= (e)=>{
     e.preventDefault();
-    setError(''); // Clear previous errors
     const username = userNameRef.current.value;
     const password = passwordRef.current.value;
-
-    try {
-      const response = await fetch('https://dummyjson.com/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        localStorage.setItem('user', JSON.stringify(data));
-        navigate('/profile');
-      } else {
-        setError(data.message);
-      }
-    } catch (error) {
-      setError('An unexpected error occurred.');
-    }
-  };
+   // console.log(`login clicked + usename : ${username} password :${password}`)
+    onLogin(username, password);
+  
+ //  can change here and fetch could be done here. 
+  }
 
   return (
     <div className="login-container">
@@ -53,7 +35,9 @@ const Login = () => {
 
 			<p>Don't have any Account?<span>Sign up</span></p>
     </div>
-  );
-};
+
+   
+  )
+}
 
 export default Login;
